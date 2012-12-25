@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Jfeed</title>
+  <style type="text/css">
+      body {
+          padding-top: 60px;
+          padding-bottom: 40px;
+      }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<!-- top menu start-->
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <%= link_to 'Project name', jobs_path, :class => "brand" %>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"><%= link_to 'Home', jobs_path %></li>
+          <li><%= link_to 'Post A Job', new_job_path %></li>
+          <li><%= link_to 'About', about_path %></li>
+          <li><%= link_to 'Contact', contact_path %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Job Types <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Walk-ins</a></li>
+              <li><a href="#">Freshers Jobs</a></li>
+              <li class="divider"></li>
+              <li class="nav-header">Nav header</li>
+              <li><a href="#">IT Jobs</a></li>
+              <li><a href="#">Bank Jobs</a></li>
+              <li><a href="#">GOVT. Jobs</a></li>
+              <li><a href="#">BPO Jobs</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!--
+        <form class="navbar-form pull-right">
+          <input class="span2" type="text" placeholder="Email">
+          <input class="span2" type="password" placeholder="Password">
+          <button type="submit" class="btn">Sign in</button>
+        </form> -->
+         <%= form_tag job_search_jobs_path, :method => 'get', :class => "form-search navbar-form pull-right", :multipart => true do %>
+          <div class="input-append">
+            <%= text_field_tag 'search', nil, :class => "span2 search-query",:placeholder => 'search for job' %>
+            <button type="submit" class="btn">Search</button>
+          </div>
+        <% end %>
+
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+<!-- top menu end -->
+<div class="container">
+
+  <div class="row">
+    <div class="span4">
+    </div>
+    <div class="span4">
+    </div>
+    <div class="span4">
+    </div>
+  </div>
+
+<%= yield %>
+  <hr>
+  <footer>
+    <p>&copy; Company 2012</p>
+  </footer>
+</div>
+</body>
+</html>

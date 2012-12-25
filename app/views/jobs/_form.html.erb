@@ -1,0 +1,103 @@
+<%= form_for @job, :html => {:class => "form-horizontal"} do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% @job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :company_name, :class => "control-label" %>
+    <div class="controls">
+    <%= f.text_field :company_name %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :company_website , :class => "control-label" %>
+    <div class="controls">
+    <%= f.text_field :company_website %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :position , :class => "control-label" %>
+    <div class="controls">
+    <%= f.text_field :position %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :experience , :class => "control-label" %>
+    <div class="controls">
+    <%= f.text_field :experience %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :location , :class => "control-label" %>
+    <div class="controls">
+    <%= f.select(:location, Job.location_type) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :ad_posting_on , :class => "control-label" %>
+    <div class="controls">
+    <%= f.date_select :ad_posting_on %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :ad_expires_on , :class => "control-label" %>
+    <div class="controls">
+    <%= f.date_select :ad_expires_on %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :qualification , :class => "control-label" %>
+    <div class="controls">
+    <%= f.text_field :qualification %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :contact_name , :class => "control-label" %>
+    <div class="controls">
+    <%= f.text_field :contact_name %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :contact_email , :class => "control-label" %>
+    <div class="controls">
+    <%= f.text_field :contact_email %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :contact_number , :class => "control-label" %>
+    <div class="controls">
+    <%= f.text_field :contact_number %>
+  </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :responsibility , :class => "control-label" %>
+    <div class="controls">
+    <%= f.text_area :responsibility, :rows => 3 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :skill , :class => "control-label" %>
+    <div class="controls">
+    <%= f.text_area :skill, :rows => 3 %>
+    </div>
+  </div>
+    <div class="control-group">
+      <div class="controls">
+             <%= f.submit 'Submit', :class => "btn" %>
+      </div>
+    </div>
+<% end %>
+
+
+<style type="text/css">
+
+
+</style>
