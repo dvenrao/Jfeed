@@ -10,7 +10,8 @@ class Job < ActiveRecord::Base
      ['Chennai','chennai'],
      ['Pune','pune'],
      ['Mumbai','mumbai'],
-     ['Other City','other']
+     ['Other City','other'],
+     ['Across India','across_india']
     ]
   end
 
