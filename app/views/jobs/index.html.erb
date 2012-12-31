@@ -1,11 +1,13 @@
 <ul class="nav nav-pills">
+
+  <% if false %>
   <% Job.location_type.each do |loc_name,loc_value|  %>
       <% if params[:location] == loc_value %><li class="active"><% else %><li><% end %>
         <%= link_to "#{loc_name} Jobs" , job_location_jobs_path(:location => loc_value ) %>
       </li>
   <% end %>
+  <% end %>
 
-  <% if false %>
   <li class="active">
     <%= link_to 'Hyderabad Jobs', job_location_jobs_path(:location => "hyderabad") %>
   </li>
@@ -14,7 +16,7 @@
   <li><%= link_to 'Pune Jobs', job_location_jobs_path(:location => "pune") %></li>
   <li><%= link_to 'Mumbai Jobs', job_location_jobs_path(:location => "mumbai") %></li>
   <li><%= link_to 'Other City Jobs', job_location_jobs_path(:location => "other") %></li>
-  <% end %>
+
 </ul>
 
 

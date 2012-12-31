@@ -9,7 +9,13 @@ class Job < ActiveRecord::Base
      ['Bangalore','bangalore'],
      ['Chennai','chennai'],
      ['Pune','pune'],
-     ['Mumbai','mumbai'],
+     ['Delhi','delhi'],
+     ['Pune','pune'],
+     ['Haryana,Noida','haryana'],
+     ['Cochin,Kerala','cochin'],
+     ['Kochi,Kerala','kochi'],
+     ['Gurgaon(New Delhi)','gurgaon'],
+     ['Kolkatha','kolkatha'],
      ['Other City','other'],
      ['Across India','across_india']
     ]

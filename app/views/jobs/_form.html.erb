@@ -41,12 +41,7 @@
     <%= f.select(:location, Job.location_type) %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :ad_posting_on , :class => "control-label" %>
-    <div class="controls">
-    <%= f.date_select :ad_posting_on %>
-    </div>
-  </div>
+
   <div class="control-group">
     <%= f.label :ad_expires_on , :class => "control-label" %>
     <div class="controls">
@@ -54,9 +49,10 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :qualification , :class => "control-label" %>
+    <%= f.label :eligibility , :class => "control-label" %>
     <div class="controls">
     <%= f.text_field :qualification %>
+      <span class="help-block">Example "B.E/B.Tech/MCA/ M.E /M.Tech/Ms."</span>
     </div>
   </div>
   <div class="control-group">
