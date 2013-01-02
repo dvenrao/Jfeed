@@ -1,5 +1,7 @@
 Jfeed::Application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+
   resources :users
 
   resources :jobs do
@@ -20,6 +22,8 @@ Jfeed::Application.routes.draw do
     post 'login' => :create
     delete 'logout' => :destroy
   end
+
+  mount Ckeditor::Engine => "/ckeditor"
 
 
   # The priority is based upon order of creation:

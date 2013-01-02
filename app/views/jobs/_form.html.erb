@@ -76,13 +76,14 @@
   <div class="control-group">
     <%= f.label :responsibility , :class => "control-label" %>
     <div class="controls">
-    <%= f.text_area :responsibility, :rows => 3 %>
+    <%#= f.text_area :responsibility, :rows => 3 %>
+      <%= f.cktext_area :responsibility, :width => 800, :height => 200 %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :skill , :class => "control-label" %>
     <div class="controls">
-    <%= f.text_area :skill, :rows => 3 %>
+    <%= f.cktext_area :skill, :width => 800, :height => 200 %>
     </div>
   </div>
     <div class="control-group">

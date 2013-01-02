@@ -38,3 +38,5 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'will_paginate', '~> 3.0.0'
+gem "ckeditor", "3.7.3"
+gem "paperclip"
