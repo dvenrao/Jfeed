@@ -8,15 +8,36 @@
   <% end %>
   <% end %>
 
-  <li class="active">
-    <%= link_to 'Hyderabad Jobs', job_location_jobs_path(:location => "hyderabad") %>
-  </li>
-  <li><%= link_to 'Bangalore Jobs', job_location_jobs_path(:location => "bangalore") %></li>
-  <li><%= link_to 'Chennai Jobs', job_location_jobs_path(:location => "chennai") %></li>
-  <li><%= link_to 'Pune Jobs', job_location_jobs_path(:location => "pune") %></li>
-  <li><%= link_to 'Mumbai Jobs', job_location_jobs_path(:location => "mumbai") %></li>
-  <li><%= link_to 'Other City Jobs', job_location_jobs_path(:location => "other") %></li>
-
+  <% if params[:location]=="hyderabad" %>
+    <li class="active"><%= link_to 'Hyderabad Jobs', job_location_jobs_path(:location => "hyderabad") %></li>
+  <% else %>
+      <li><%= link_to 'Hyderabad Jobs', job_location_jobs_path(:location => "hyderabad") %></li>
+  <% end %>
+  <% if params[:location]=="bangalore" %>
+      <li class="active"><%= link_to 'Bangalore Jobs', job_location_jobs_path(:location => "bangalore") %></li>
+  <% else %>
+      <li><%= link_to 'Bangalore Jobs', job_location_jobs_path(:location => "bangalore") %></li>
+  <% end %>
+  <% if params[:location]=="chennai" %>
+      <li class="active"><%= link_to 'Chennai Jobs', job_location_jobs_path(:location => "chennai") %></li>
+  <% else %>
+      <li><%= link_to 'Chennai Jobs', job_location_jobs_path(:location => "chennai") %></li>
+  <% end %>
+  <% if params[:location]=="pune" %>
+      <li class="active"><%= link_to 'Pune Jobs', job_location_jobs_path(:location => "pune") %></li>
+  <% else %>
+      <li><%= link_to 'Pune Jobs', job_location_jobs_path(:location => "pune") %></li>
+  <% end %>
+  <% if params[:location]=="mumbai" %>
+      <li class="active"><%= link_to 'Mumbai Jobs', job_location_jobs_path(:location => "mumbai") %></li>
+  <% else %>
+      <li><%= link_to 'Mumbai Jobs', job_location_jobs_path(:location => "mumbai") %></li>
+  <% end %>
+  <% if params[:location]=="other" %>
+      <li class="active"><%= link_to 'Other City Jobs', job_location_jobs_path(:location => "other") %></li>
+  <% else %>
+      <li><%= link_to 'Other City Jobs', job_location_jobs_path(:location => "other") %></li>
+  <% end %>
 </ul>
 
 
@@ -41,7 +62,7 @@
     <td><%= job.location %></td>
     <td><%= job.position.split[0..1].join(" ") %></td>
     <td><%= job.experience %></td>
-    <td><%= job.ad_expires_on %></td>
+    <td><% if job.qualification.empty? %>ASAP<% else %><%= job.ad_expires_on %><% end %></td>
     <td><%= job.qualification.split[0..3].join(" ") %></td>
     <td><%= link_to 'Details', job %></td>
   </tr>
