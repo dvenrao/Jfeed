@@ -6,8 +6,7 @@ class CreateJobs < ActiveRecord::Migration
       t.string :position
       t.string :experience
       t.string :location
-      t.date :ad_posting_on
-      t.date :ad_expires_on
+      t.string :ad_expires_on
       t.string :qualification
       t.string :contact_name
       t.string :contact_email

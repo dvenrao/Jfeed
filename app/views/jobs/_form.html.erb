@@ -11,10 +11,10 @@
     </div>
   <% end %>
 
-  <div class="control-group">
+  <div class="control-group error">
     <%= f.label :company_name, :class => "control-label" %>
     <div class="controls">
-    <%= f.text_field :company_name %>
+    <%= f.text_field :company_name%>
     </div>
   </div>
   <div class="control-group">
@@ -23,16 +23,17 @@
     <%= f.text_field :company_website %>
     </div>
   </div>
-  <div class="control-group">
+  <div class="control-group error">
     <%= f.label :position , :class => "control-label" %>
     <div class="controls">
     <%= f.text_field :position %>
     </div>
   </div>
-  <div class="control-group">
+  <div class="control-group error">
     <%= f.label :experience , :class => "control-label" %>
     <div class="controls">
     <%= f.text_field :experience %>
+      <span class="help-inline">Example "Fresher or 1-2 Years"</span>
     </div>
   </div>
   <div class="control-group">
@@ -41,20 +42,20 @@
     <%= f.select(:location, Job.location_type) %>
     </div>
   </div>
-
+  <div class="control-group error">
+    <%= f.label 'Eligibility / Qualification' , :class => "control-label" %>
+    <div class="controls">
+    <%= f.text_field :qualification %>
+      <span class="help-inline">Example "B.E/B.Tech/MCA/ M.E /M.Tech/Ms."</span>
+    </div>
+  </div>
   <div class="control-group">
     <%= f.label :ad_expires_on , :class => "control-label" %>
     <div class="controls">
-    <%= f.date_select :ad_expires_on %>
+      <%= f.text_field :ad_expires_on %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :eligibility , :class => "control-label" %>
-    <div class="controls">
-    <%= f.text_field :qualification %>
-      <span class="help-block">Example "B.E/B.Tech/MCA/ M.E /M.Tech/Ms."</span>
-    </div>
-  </div>
+
   <div class="control-group">
     <%= f.label :contact_name , :class => "control-label" %>
     <div class="controls">
@@ -71,10 +72,11 @@
     <%= f.label :contact_number , :class => "control-label" %>
     <div class="controls">
     <%= f.text_field :contact_number %>
+    <span class="help-inline">Example "9849098490"</span>
   </div>
   </div>
   <div class="control-group">
-    <%= f.label :responsibility , :class => "control-label" %>
+    <%= f.label 'Job Summary / Responsibility' , :class => "control-label" %>
     <div class="controls">
     <%#= f.text_area :responsibility, :rows => 3 %>
       <%= f.cktext_area :responsibility, :width => 800, :height => 200 %>
@@ -98,3 +100,11 @@
 
 
 </style>
+
+<script type='text/javascript'>
+  $(function () {
+    $("#job_ad_expires_on").datepicker({"format": "yyyy-mm-dd"});
+  });
+
+
+</script>

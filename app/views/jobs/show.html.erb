@@ -1,25 +1,28 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <b>Company name:</b>
   <%= @job.company_name %>
 </p>
-
+<% unless @job.company_website.empty? %>
 <p>
   <b>Company website:</b>
   <%= @job.company_website %>
 </p>
-
+<% end %>
+<% unless @job.position.empty? %>
 <p>
   <b>Position:</b>
   <%= @job.position %>
 </p>
-
+<% end %>
+<% unless @job.experience.empty? %>
 <p>
   <b>Experience:</b>
   <%= @job.experience %>
 </p>
-
+<% end %>
 <p>
   <b>Location:</b>
   <%= @job.location %>
@@ -27,44 +30,48 @@
 
 <p>
   <b>Ad posting on:</b>
-  <%= @job.ad_posting_on %>
+  <%= @job.created_at %>
 </p>
-
+<% unless @job.qualification.empty? %>
 <p>
   <b>Ad expires on:</b>
   <%= @job.ad_expires_on %>
 </p>
-
+<% end %>
+<% unless @job.qualification.empty? %>
 <p>
   <b>Qualification:</b>
   <%= @job.qualification %>
 </p>
-
+<% end %>
+<% unless @job.contact_name.empty? %>
 <p>
   <b>Contact name:</b>
   <%= @job.contact_name %>
 </p>
-
+<% end %>
+<% unless @job.contact_email.empty? %>
 <p>
   <b>Contact email:</b>
   <%= @job.contact_email %>
 </p>
-
+<% end %>
+<% unless @job.contact_number.empty? %>
 <p>
   <b>Contact number:</b>
   <%= @job.contact_number %>
 </p>
-
+<% end %>
 <p>
-  <b>Responsibility:</b>
+  <b>Job Summary:</b>
   <%= raw @job.responsibility %>
 </p>
-
+<% unless @job.skill.empty? %>
 <p>
   <b>Skill:</b>
   <%= raw @job.skill %>
 </p>
-
+<% end %>
 
 <%= link_to 'Edit', edit_job_path(@job) %> |
 <%= link_to 'Back', jobs_path %>

@@ -36,7 +36,7 @@
   <tbody>
 <% @jobs.each do |job| %>
   <tr>
-    <td><%= job.ad_posting_on %></td>
+    <td><%= job.created_at.strftime("%d-%m-%Y") %></td>
     <td><%= job.company_name.split[0..1].join(" ") %></td>
     <td><%= job.location %></td>
     <td><%= job.position.split[0..1].join(" ") %></td>
