@@ -4,7 +4,7 @@ Jfeed::Application.routes.draw do
 
   resources :users
 
-  resources :jobs do
+  resources :jobs ,:path => '/' do
     collection do
       get "job_location"
       get "job_search"
@@ -24,6 +24,8 @@ Jfeed::Application.routes.draw do
   end
 
   mount Ckeditor::Engine => "/ckeditor"
+
+
 
 
   # The priority is based upon order of creation:

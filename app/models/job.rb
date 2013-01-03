@@ -80,4 +80,8 @@ class Job < ActiveRecord::Base
   end
 
 
+  def to_param
+    "#{id}-#{company_name.parameterize}-#{created_at.strftime('%d-%m-%Y')}"
+  end
+
 end
