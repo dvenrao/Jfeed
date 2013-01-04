@@ -4,10 +4,11 @@ Jfeed::Application.routes.draw do
 
   resources :users
 
-  resources :jobs ,:path => '/' do
+  resources :jobs do
     collection do
       get "job_location"
       get "job_search"
+      get  'post_job' => :new
     end
   end
 
