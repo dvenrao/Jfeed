@@ -1,3 +1,7 @@
+<% if @title.nil? %>
+    <% @title="JobTar.com Free Job post India | Best IT/Government Jobs|Job Search" %>
+<% end %>
+
 <ul class="nav nav-pills">
 
   <% if false %>
@@ -8,36 +12,24 @@
   <% end %>
   <% end %>
 
-  <% if params[:location]=="hyderabad" %>
-    <li class="active"><%= link_to 'Hyderabad Jobs', job_location_jobs_path(:location => "hyderabad") %></li>
-  <% else %>
-      <li><%= link_to 'Hyderabad Jobs', job_location_jobs_path(:location => "hyderabad") %></li>
-  <% end %>
-  <% if params[:location]=="bangalore" %>
-      <li class="active"><%= link_to 'Bangalore Jobs', job_location_jobs_path(:location => "bangalore") %></li>
-  <% else %>
-      <li><%= link_to 'Bangalore Jobs', job_location_jobs_path(:location => "bangalore") %></li>
-  <% end %>
-  <% if params[:location]=="chennai" %>
-      <li class="active"><%= link_to 'Chennai Jobs', job_location_jobs_path(:location => "chennai") %></li>
-  <% else %>
-      <li><%= link_to 'Chennai Jobs', job_location_jobs_path(:location => "chennai") %></li>
-  <% end %>
-  <% if params[:location]=="pune" %>
-      <li class="active"><%= link_to 'Pune Jobs', job_location_jobs_path(:location => "pune") %></li>
-  <% else %>
-      <li><%= link_to 'Pune Jobs', job_location_jobs_path(:location => "pune") %></li>
-  <% end %>
-  <% if params[:location]=="mumbai" %>
-      <li class="active"><%= link_to 'Mumbai Jobs', job_location_jobs_path(:location => "mumbai") %></li>
-  <% else %>
-      <li><%= link_to 'Mumbai Jobs', job_location_jobs_path(:location => "mumbai") %></li>
-  <% end %>
-  <% if params[:location]=="other" %>
-      <li class="active"><%= link_to 'Other City Jobs', job_location_jobs_path(:location => "other") %></li>
-  <% else %>
-      <li><%= link_to 'Other City Jobs', job_location_jobs_path(:location => "other") %></li>
-  <% end %>
+  <% if params[:location]=="Hyderabad" %><li class="active"><% else %><li><% end %>
+  <%= link_to 'Hyderabad Jobs', job_location_jobs_path(:location => "Hyderabad") %></li>
+
+  <% if params[:location]=="Bangalore" %><li class="active"><% else %><li><% end %>
+  <%= link_to 'Bangalore Jobs', job_location_jobs_path(:location => "Bangalore") %></li>
+
+  <% if params[:location]=="Chennai" %><li class="active"><% else %><li><% end %>
+  <%= link_to 'Chennai Jobs', job_location_jobs_path(:location => "Chennai") %></li>
+
+  <% if params[:location]=="Pune" %><li class="active"><% else %><li><% end %>
+  <%= link_to 'Pune Jobs', job_location_jobs_path(:location => "Pune") %></li>
+
+  <% if params[:location]=="Mumbai" %><li class="active"><% else %><li><% end %>
+  <%= link_to 'Mumbai Jobs', job_location_jobs_path(:location => "Mumbai") %></li>
+
+  <% if params[:location]=="other" %><li class="active"><% else %><li><% end %>
+  <%= link_to 'Other City Jobs', job_location_jobs_path(:location => "other") %></li>
+
 </ul>
 
 
@@ -73,7 +65,6 @@
 <% end %>
   </tbody>
 </table>
-<%= will_paginate @raw_messages, :class => 'digg_pagination'%>
 
   <% end %>
 <br />

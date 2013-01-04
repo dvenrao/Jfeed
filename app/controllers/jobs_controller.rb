@@ -85,12 +85,16 @@ class JobsController < ApplicationController
 
   def job_location
     #@jobs = Job.find_all_by_location(params[:location])
-    @jobs = Job.paginate(:page => params[:page], :per_page => 50).where(:location => params[:location]).order("created_at")
+    @title="#{params[:location]} Jobs"
+    @meta_tag_desc="Find thousands of jobs in #{params[:location]}. Search and apply online for jobs in #{params[:location]}. Begin your best job search today."
+    @jobs = Job.paginate(:page => params[:page], :per_page => 50).where(:location => params[:location]).order("created_at desc")
     render :'jobs/index'
   end
 
   def job_search
-    @jobs = Job.paginate(:page => params[:page], :per_page => 50).order("created_at").search(params[:search])
+    @title="#{params[:search]} Top 50 Best Jobs"
+    @meta_tag_desc = "Search #{params[:search]} jobs in India. Search job openings on #{params[:search]}, see if they fit - company salaries, reviews, and more posted by employees"
+    @jobs = Job.paginate(:page => params[:page], :per_page => 50).order("created_at desc").search(params[:search])
     render :'jobs/index'
   end
 

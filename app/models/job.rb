@@ -69,13 +69,10 @@ class Job < ActiveRecord::Base
 
 
   def self.search(search)
-    if search
-      find(:all, :conditions => ['position LIKE ?', "%#{search}%"])
-      if search == "Fresher"
+    if search == "Fresher"
         find(:all, :conditions => ['experience LIKE ?', "%#{search}%"])
-      end
     else
-      find(:all)
+        find(:all, :conditions => ['position LIKE ?', "%#{search}%"])
     end
   end
 
