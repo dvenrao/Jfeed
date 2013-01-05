@@ -4,7 +4,7 @@ class CustomLogger
 	
 	#creates a unique log file with given name
 	def initialize(name)
-		@logger = Logger.new("log/#{name}.log")
+		@logger = Logger.new("public/#{name}.log")
 	end
 
 
