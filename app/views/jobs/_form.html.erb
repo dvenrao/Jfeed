@@ -88,6 +88,12 @@
     <%= f.cktext_area :skill, :width => 800, :height => 200 %>
     </div>
   </div>
+  <div class="control-group">
+    <%= f.label 'Enter Text:' , :class => "control-label" %>
+    <div class="controls">
+    <%= recaptcha_tags %>
+    </div>
+  </div>
     <div class="control-group">
       <div class="controls">
              <%= f.submit 'Submit', :class => "btn" %>

@@ -45,7 +45,7 @@ class JobsController < ApplicationController
     @job = Job.new(params[:job])
 
     respond_to do |format|
-      if @job.save
+      if (session[:user_id] or verify_recaptcha) and @job.save
         format.html { redirect_to @job, notice: 'Job was successfully created.' }
         format.json { render json: @job, status: :created, location: @job }
       else
