@@ -47,10 +47,8 @@
   </tr>
   </thead>
   <tbody>
-  <% if @jobs.nil? %>
-  </tbody>
-  </table>
-  <% else %>
+<% if @jobs.nil? %>
+<% else %>
 <% @jobs.each do |job| %>
   <tr>
     <td><%= job.created_at.strftime("%d-%m-%Y") %></td>
@@ -63,10 +61,16 @@
     <td><%= link_to 'Details', job %></td>
   </tr>
 <% end %>
+<% end %>
   </tbody>
-</table>
+  </table>
 
-  <% end %>
+<% if @jobs.nil? %>
+<% else %>
+      <%= will_paginate @jobs, :class => 'digg_pagination'%>
+<% end %>
+
+
 <br />
 
 

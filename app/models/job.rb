@@ -10,7 +10,7 @@ class Job < ActiveRecord::Base
      ['Chennai','chennai'],
      ['Pune','pune'],
      ['Delhi','delhi'],
-     ['Pune','pune'],
+     ['Mumbai','mumbai'],
      ['Haryana,Noida','haryana'],
      ['Cochin,Kerala','cochin'],
      ['Kochi,Kerala','kochi'],

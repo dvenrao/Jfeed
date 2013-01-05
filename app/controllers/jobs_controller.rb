@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   skip_before_filter :authorize, :only => [:index,:show, :new, :create,:job_location,:job_search]
+  before_filter :default_form_values
   # GET /jobs
   # GET /jobs.json
   def index
@@ -16,7 +17,6 @@ class JobsController < ApplicationController
   # GET /jobs/1.json
   def show
     @job = Job.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @job }
@@ -96,6 +96,11 @@ class JobsController < ApplicationController
     @meta_tag_desc = "Search #{params[:search]} jobs in India. Search job openings on #{params[:search]}, see if they fit - company salaries, reviews, and more posted by employees"
     @jobs = Job.paginate(:page => params[:page], :per_page => 50).order("created_at desc").search(params[:search])
     render :'jobs/index'
+  end
+
+  def default_form_values
+    log = CustomLogger.new("user_access")
+    log.info("ip_address: #{request.remote_ip}, Url: #{request.url}")
   end
 
 

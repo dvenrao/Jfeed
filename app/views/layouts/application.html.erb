@@ -13,7 +13,7 @@
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "ckeditor/init" %>
   <%= csrf_meta_tags %>
-  <meta name=”keywords” content="<%= @title.split[0..2].join(" ") %>">
+  <meta name=”keywords” content="<%= @title.split[0..2].join(" ") rescue 'JobTar' %>">
   <meta name="description" content="<%= @meta_tag_desc %>">
 </head>
 <body>
