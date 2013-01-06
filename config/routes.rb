@@ -15,7 +15,10 @@ Jfeed::Application.routes.draw do
   controller :information do
     get "contact"
     get "about"
+    get "sitemap_ibo"
   end
+
+
 
 
   controller :sessions do

@@ -7,4 +7,8 @@ class InformationController < ApplicationController
   def about
   end
 
+  def sitemap_ibo
+    @jobs=Job.all
+  end
+
 end
