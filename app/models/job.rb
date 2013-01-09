@@ -21,6 +21,24 @@ class Job < ActiveRecord::Base
     ]
   end
 
+  def self.location_type_to_value
+    [
+      "hyderabad" => "Hyderabad",
+      "bangalore" => "Bangalore",
+      "chennai" => "Chennai",
+      "pune" => "Pune",
+      "delhi" => "Delhi",
+      "mumbai" => "Mumbai",
+      "haryana" => "Haryana,Noida",
+      "cochin" => "Cochin,Kerala",
+      "kochi" => "Kochi,Kerala",
+      "gurgaon" => "Gurgaon(New Delhi)",
+      "kolkatha" => "Kolkatha",
+      "other" => "Other City",
+      "across_india" => "Across India"
+    ]
+  end
+
   def self.category
     [
       ["Select a Category"],
