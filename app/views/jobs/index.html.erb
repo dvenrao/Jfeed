@@ -30,6 +30,12 @@
   <% if params[:location]=="other" %><li class="active"><% else %><li><% end %>
   <%= link_to 'Other City Jobs', job_location_jobs_path(:location => "other") %></li>
 
+
+  <li><a href="https://twitter.com/JobTar" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @JobTar</a>
+  </li>
+  <li style="margin-top: 8px;margin-left: 18px;"><div class="fb-like" data-href="https://www.facebook.com/jobtar" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+  </li>
+
 </ul>
 
 
@@ -61,7 +67,6 @@
     <td><%= job.qualification.split[0..1].join(" ") %></td>
     <td><%= link_to 'Details', job %></td>
     <td><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.jobtar.com<%= job_path(job) %>" data-text="Hiring for <%= job.company_name %> - <%= job.position %> in <%= job.location %> for <%= job.experience %>" data-via="jobtar" data-count="none" data-hashtags="JOB">Tweet</a>
-      <div class="fb-like" data-href="http://www.jobtar.com<%= job_path(job) %>" data-send="false" data-layout="button_count" data-width="250" data-show-faces="false"></div>
 </td>
   </tr>
 <% end %>

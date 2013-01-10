@@ -3,6 +3,14 @@
 
 <p id="notice"><%= notice %></p>
 
+<div class="fr">
+  <a href="https://twitter.com/share" class="twitter-share-button" data-text="Hiring for <%= @job.company_name %> -
+  <%= @job.position %> in <%= @job.location %> for
+     <%= @job.experience %>" data-via="jobtar" data-count="none" data-hashtags="JOB">Tweet</a>
+  <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+</div>
+
+
 
 <p>
   <b>Company name:</b>
@@ -78,3 +86,13 @@
 
 <%= link_to 'Edit', edit_job_path(@job) %> |
 <%= link_to 'Back', jobs_path %>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
