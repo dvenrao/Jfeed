@@ -16,6 +16,8 @@ Jfeed::Application.routes.draw do
     get "contact"
     get "about"
     get "sitemap_ibo"
+    get "interviewer"
+    get "redundancyadvice"
   end
 
 
